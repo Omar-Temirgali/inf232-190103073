@@ -10,7 +10,7 @@
 <body>
     <main class="container">
         <div class="form-container">
-            <form action="" method="POST">
+            <form action="insertData.php" method="POST">
                 <label for="fname">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
                 <label for="lname">Last Name</label>
