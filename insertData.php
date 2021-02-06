@@ -1,19 +1,15 @@
 <?php
-    $conn = new mysqli('localhost', 'root', '', 'stick');
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+    include "dbConn.php";
 
     $sql = "INSERT INTO peoplle (fName, lName, email)
     VALUES ('".$_POST["firstname"]."', '".$_POST["lastname"]."', '".$_POST["email"]."')";
             
-    if ($conn->query($sql) === TRUE) {
-      echo "";
+    if ($db->query($sql) === TRUE) {
+        echo "";
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $db->error;
     }
     
-    $conn->close();
+    $db->close();
     require "index.php";
 ?>
